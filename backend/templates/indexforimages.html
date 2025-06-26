@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Coin Detection</title>
+</head>
+<body>
+    <h2>Upload a Sri Lankan Coin Image</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Detect</button>
+    </form>
+
+    {% if image_path %}
+        <h3>Detected Coins</h3>
+        <img src="{{ image_path }}" alt="Detected Coin" width="600">
+    {% endif %}
+
+    {% if total_value %}
+        <h3>Total Value: Rs {{ total_value }}</h3>
+    {% endif %}
+</body>
+</html>
